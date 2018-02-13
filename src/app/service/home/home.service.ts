@@ -9,7 +9,7 @@ export class HomeService {
   	this.http = http;
   }
 
-  public getting(data){
+   getting(){
   	return this.http.get('https://api.tirto.net/infografik/latest');
   }
 
