@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mapdetail',
@@ -7,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapdetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-<<<<<<< HEAD
-  ngOnInit() {
-=======
+
   ngOnInit(){
->>>>>>> cad1bf38a366aca11ee127cf3529c94c26e05b52
+
+
+  	this.sub = this.route.params.subscribe(params => {
+       this.id = +params['id']; // (+) converts string 'id' to a number
+
+       // In a real app: dispatch action to load the details here.
+    });
+    console.log(this.id);
+
   }
 
 }

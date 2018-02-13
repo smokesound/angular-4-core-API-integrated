@@ -11,7 +11,7 @@ import { MapdetailComponent } from './page/mapdetail/mapdetail.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'mapdetail', pathMatch: 'full', component: MapdetailComponent },
+  { path: 'mapdetail/:id', pathMatch: 'full', component: MapdetailComponent },
 ];
 
 
