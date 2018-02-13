@@ -2,9 +2,9 @@
   
   <ul>
     
-    <li *ngFor="let beritatunggal of berita" (click)="cekBerita(beritatunggal.id)">
+    <a routerLink="/mapdetail" routerLinkActive="active" *ngFor="let beritatunggal of berita">
       {{ beritatunggal.berita_url }} <br>
       {{ beritatunggal.berita_ringkasan }} <br> <br>
-    </li>
+    </a>
   </ul>
 </div>
