@@ -7,11 +7,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { HomeComponent } from './page/home/home.component';
 import { MapdetailComponent } from './page/mapdetail/mapdetail.component';
+import { MapdetailService } from './service/mapdetail/mapdetail.service';
 
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'mapdetail', pathMatch: 'full', component: MapdetailComponent },
+  { path: 'mapdetail/:id', pathMatch: 'full', component: MapdetailComponent },
 ];
 
 
@@ -30,7 +31,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [HomeService],
+  providers: [HomeService, MapdetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

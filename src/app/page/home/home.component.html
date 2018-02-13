@@ -1,17 +1,16 @@
 <div>
   
-<!--   <ul>
-    
-    <a routerLink="/mapdetail" routerLinkActive="active" *ngFor="let beritatunggal of berita">
-      {{ beritatunggal.berita_url}}<br>
+  <!-- <ul>
+    <a routerLink="/mapdetail/{{beritatunggal.id}}" routerLinkActive="active" *ngFor="let beritatunggal of singleberita">
+      {{ beritatunggal.berita_url }} <br>
       {{ beritatunggal.berita_ringkasan }} <br> <br>
-
     </a>
   </ul> -->
 
-  <div *ngFor="let beritasatu of berita" (click)="cekBerita(beritasatu.image_title)">
-  	{{ beritasatu.berita_judul }}<br>
-  	{{ beritasatu.berita_ringkasan }}<br>
-  	<img src="{{ beritasatu.image_url }}"><br><br>
-  </div>
+	<div>
+	  <a routerLink="/mapdetail/{{userinfo.id}}" *ngFor="let userinfo of userlist">
+	  	{{ userinfo.title }}<br>
+	  	{{ userinfo.body }}<br><br>
+	  </a>
+	</div>
 </div>
