@@ -1,3 +1,9 @@
-<p>
-  home works!
-</p>
+<div>
+  
+  <ul>
+    
+    <li *ngFor="let hero of berita" (click)="cekBerita(hero.id)">
+      {{ hero.berita_url }}
+    </li>
+  </ul>
+</div>
