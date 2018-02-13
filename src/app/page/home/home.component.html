@@ -2,8 +2,9 @@
   
   <ul>
     
-    <li *ngFor="let hero of berita" (click)="cekBerita(hero.id)">
-      {{ hero.berita_url }}
+    <li *ngFor="let beritatunggal of berita" (click)="cekBerita(beritatunggal.id)">
+      {{ beritatunggal.berita_url }} <br>
+      {{ beritatunggal.berita_ringkasan }} <br> <br>
     </li>
   </ul>
 </div>

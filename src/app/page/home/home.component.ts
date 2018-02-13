@@ -29,4 +29,9 @@ export class HomeComponent implements OnInit {
   	});
   }
 
+  cekBerita(param){
+  	alert(param);
+  	console.log(param);
+  }
+
 }
