@@ -1,4 +1,4 @@
-import { Component, OnInit, Http } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../service/home/home.service'
 
 @Component({
@@ -8,9 +8,12 @@ import { HomeService } from '../../service/home/home.service'
 })
 export class HomeComponent implements OnInit {
 
+	berita:Array<string>;
+
   constructor(public homeService: HomeService){
 
   }
+
 
   ngOnInit() {
   	console.log('tes');
