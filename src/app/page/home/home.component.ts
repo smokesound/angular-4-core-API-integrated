@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../../service/home/home.service'
+import { HomeService } from '../../service/home/home.service';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

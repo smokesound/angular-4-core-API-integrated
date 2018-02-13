@@ -9,7 +9,11 @@ export class MapdetailComponent implements OnInit {
 
   constructor() { }
 
+<<<<<<< HEAD
   ngOnInit() {
+=======
+  ngOnInit(){
+>>>>>>> cad1bf38a366aca11ee127cf3529c94c26e05b52
   }
 
 }
