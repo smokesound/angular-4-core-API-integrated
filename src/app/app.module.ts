@@ -7,12 +7,14 @@ import { HomeService } from './service/home/home.service';
 
 
 import { HomeComponent } from './page/home/home.component';
+import { MapdetailComponent } from './page/mapdetail/mapdetail.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
+    MapdetailComponent,
   ],
   imports: [
     BrowserModule,

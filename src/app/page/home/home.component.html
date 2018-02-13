@@ -2,9 +2,11 @@
   
   <ul>
     
-    <li *ngFor="let beritatunggal of berita" (click)="cekBerita(beritatunggal.id)">
-      {{ beritatunggal.berita_url }} <br>
-      {{ beritatunggal.berita_ringkasan }} <br> <br>
+    <li *ngFor="let beritatunggal of berita" (click)="cekBerita(beritatunggal.berita_url)">
+      <div>{{ beritatunggal.berita_judul }}</div> <br>
+      <div>{{ beritatunggal.berita_ringkasan }}</div> <br> 
+      <div> <img src={{beritatunggal.image_url}}> </div><br> <br>
+
     </li>
   </ul>
 </div>
