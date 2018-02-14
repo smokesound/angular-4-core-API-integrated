@@ -12,7 +12,9 @@ export class HomeService {
    getting(){
   	return this.http.get('https://api.tirto.net/infografik/latest');
   }
-
+  nyokot(){
+  	return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  }
   public sayHello(){
   	console.log('hello');
   }

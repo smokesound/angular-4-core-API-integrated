@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 	berita:any;
 	singleberita: any;
 	data: Array<any>;
+  userlist: any;
 
   constructor(public homeService: HomeService){
 
@@ -26,12 +27,11 @@ export class HomeComponent implements OnInit {
 
   	this.homeService.sayHello();
 
-  	this.homeService.getting()
+  	this.homeService.nyokot()
   	.subscribe(data => {
   		console.log(data);
-  		this.berita = data;
-  		this.singleberita = this.berita.data;
-  		console.log(this.berita.data);
+  		this.userlist = data;
+      console.log(this.userlist);
   	}, error => {
   		console.log(error);
   	});

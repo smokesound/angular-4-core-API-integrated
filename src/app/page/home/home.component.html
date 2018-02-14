@@ -1,12 +1,19 @@
 <div>
   
-  <ul>
-    
 
+  <!-- <ul>
+>>>>>>> b64dcab8ac8c3126a5fe936057dfd5e16676552f
     <a routerLink="/mapdetail/{{beritatunggal.id}}" routerLinkActive="active" *ngFor="let beritatunggal of singleberita">
 
       {{ beritatunggal.berita_url }} <br>
       {{ beritatunggal.berita_ringkasan }} <br> <br>
     </a>
-  </ul>
+  </ul> -->
+
+	<div>
+	  <a routerLink="/mapdetail/{{userinfo.id}}" *ngFor="let userinfo of userlist">
+	  	{{ userinfo.title }}<br>
+	  	{{ userinfo.body }}<br><br>
+	  </a>
+	</div>
 </div>
