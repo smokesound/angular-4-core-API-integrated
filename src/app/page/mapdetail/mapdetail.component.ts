@@ -31,16 +31,16 @@ title: any;
     });
     console.log(this.id);
 
-    this.mapdetailService.ambil(this.id)
-    .subscribe(data => {
-      console.log(data.id);
-      this.userbody = data.id;
-      // this.userid = userbody.id
-      // console.log(this.userid);
-    }, error => {
-      console.log(error);
+    // this.mapdetailService.ambil(this.id)
+    // .subscribe(data => {
+    //   console.log(data.id);
+    //   this.userbody = data.id;
+    //   // this.userid = userbody.id
+    //   // console.log(this.userid);
+    // }, error => {
+    //   console.log(error);
 
-    });
+    // });
 }
 
 bikinKeluar(){

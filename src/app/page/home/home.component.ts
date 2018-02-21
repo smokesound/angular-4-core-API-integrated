@@ -3,8 +3,8 @@ import { HomeService } from '../../service/home/home.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { MapdetailComponent } from "../mapdetail/mapdetail";
+// import { Observable } from 'rxjs/Observable';
+// import { MapdetailComponent } from "../mapdetail/mapdetail";
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
   classId: any;
   map: any;
   mapdetail: any;
+  ros : any;
+  id: any;
 
 
   
