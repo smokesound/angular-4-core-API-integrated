@@ -1,0 +1,31 @@
+.kalimantanUtara{
+	fill:black;	
+}
+.kalimantanTimur{
+	fill:black;	
+}
+.kalimantanSelatan{
+	fill:black;	
+}
+.kalimantanBarat{
+	fill:black;	
+}
+.kalimantanTengah{
+	fill:black;	
+}
+
+.kalimantanUtara:hover{
+	fill:red;	
+}
+.kalimantanTimur:hover{
+	fill:red;	
+}
+.kalimantanSelatan:hover{
+	fill:red;	
+}
+.kalimantanBarat:hover{
+	fill:red;	
+}
+.kalimantanTengah:hover{
+	fill:red;	
+}

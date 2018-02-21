@@ -12,7 +12,7 @@ import { MapdetailService } from './service/mapdetail/mapdetail.service';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'mapdetail/:id', pathMatch: 'full', component: MapdetailComponent },
+  { path: 'mapdetail', pathMatch: 'full', component: MapdetailComponent },
 ];
 
 

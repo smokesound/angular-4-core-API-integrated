@@ -13,30 +13,59 @@ usertitle: any;
 userbody: any;
 sub: any;
 id: any;
+keluar: boolean = false;
+alldata: any;
+peta: boolean = false;
+title: any;
 
   constructor(private route: ActivatedRoute, public mapdetailService: MapdetailService
     ) { }
 
 
   ngOnInit(){
-
+  
 
   	this.sub = this.route.params.subscribe(params => {
-       this.id = +params['id']; // (+) converts string 'id' to a number
+       this.id = + params['id']; // (+) converts string 'id' to a number
  
     });
     console.log(this.id);
 
     this.mapdetailService.ambil(this.id)
     .subscribe(data => {
-      console.log(data);
-      this.userbody = data;
-      this.usertitle = this.userbody.title;
-      console.log(this.userbody);
+      console.log(data.id);
+      this.userbody = data.id;
+      // this.userid = userbody.id
+      // console.log(this.userid);
     }, error => {
       console.log(error);
 
     });
 }
+
+bikinKeluar(){
+  console.log(this.keluar);
+    if (this.keluar == true) {
+      this.keluar = false;
+    } else {
+      this.keluar = true;
+    }
   }
 
+  hitApi(params){
+    this.peta = true;
+    this.mapdetailService.ambil(params)
+    .subscribe(data => {
+      console.log(data);
+      this.alldata = data;
+      this.title = this.alldata.title
+      console.log(this.alldata);
+    }, error =>{
+      console.log(error);
+    })
+
+
+  }
+  
+
+}
