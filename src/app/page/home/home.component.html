@@ -1,44 +1,21 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?> -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <title>JQVMap - Indonesia Map</title>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <link href="../assets/jqvmap.css" media="screen" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  </head>
-  <body>
-    <div id="vmap" style="width: 900px; height: 400px;"></div>
-  </body>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../assets/jquery.vmap.js"></script>
-    <script type="text/javascript" src="../assets/maps/jquery.vmap.indonesia.json" charset="utf-8"></script>
-    
-</html> -->
 
-<div>
+<div *ngFor="let provinsi of DataProvinsi" (click)="LihatKota(provinsi.Provinsi)" >
+  {{ provinsi.No }}
+  {{ provinsi.Provinsi }}
+
+
+</div>
+
+
+<!-- 
+{{DataProvinsi.limit}} -->
+<!-- <div>
   <svg height="500" width="1000">
   
   <path *ngFor="let mapkecil of map" [attr.d]="mapkecil.pathId" (click)="makeAlert(mapkecil.id)" [ngClass]="mapkecil.classId" stroke="white"/>
   
 </svg>
 
-</div>
-
-
-<!-- <div>
-  
-
-  <ul>
->>>>>>> b64dcab8ac8c3126a5fe936057dfd5e16676552f
-    <a routerLink="/mapdetail/{{beritatunggal.id}}" routerLinkActive="active" *ngFor="let beritatunggal of singleberita">
-
-      {{ beritatunggal.berita_url }} <br>
-      {{ beritatunggal.berita_ringkasan }} <br> <br>
-    </a>
-  </ul>
-
-	<div>
 <a routerLink="/mapdetail/{{userinfo.id}}" *ngFor="let userinfo of userlist">	  
 	  	{{ userinfo.title }}<br>
 	  	{{ userinfo.body }}<br> -->

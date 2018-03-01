@@ -17,19 +17,29 @@ keluar: boolean = false;
 alldata: any;
 peta: boolean = false;
 title: any;
+DataKota: any;
+DataCalon:any;
 
   constructor(private route: ActivatedRoute, public mapdetailService: MapdetailService
     ) { }
 
 
   ngOnInit(){
-  
-
-  	this.sub = this.route.params.subscribe(params => {
-       this.id = + params['id']; // (+) converts string 'id' to a number
- 
+    this.sub = this.route.params.subscribe(params => {
+       this.id = params['id']; // (+) converts string 'id' to a number
     });
+
     console.log(this.id);
+
+  this.mapdetailService.getDetailProvinsi(this.id)
+    .subscribe(data => {
+      console.log(data);
+      // this.DataKota = data.data;
+      console.log(this.DataKota);
+    }, error => {
+      console.log(error);
+
+    });
 
     // this.mapdetailService.ambil(this.id)
     // .subscribe(data => {
@@ -63,9 +73,19 @@ bikinKeluar(){
     }, error =>{
       console.log(error);
     })
-
-
   }
   
+  detailKota(params){
+    console.log(params);
+     this.mapdetailService.getDetailKota(params)
+    .subscribe(data => {
+      console.log(data);
+      // this.DataCalon = data.data;
+      console.log(this.DataCalon);
+    }, error => {
+      console.log(error);
+
+    });
+  }
 
 }

@@ -8,11 +8,12 @@ import { AppComponent } from './app/app.component';
 import { HomeComponent } from './page/home/home.component';
 import { MapdetailComponent } from './page/mapdetail/mapdetail.component';
 import { MapdetailService } from './service/mapdetail/mapdetail.service';
+import { CalondetailComponent } from './page/calondetail/calondetail.component';
 
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'mapdetail', pathMatch: 'full', component: MapdetailComponent },
+  { path: 'mapdetail/:id', pathMatch: 'full', component: MapdetailComponent },
 ];
 
 
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     HomeComponent,
     MapdetailComponent,
     AppComponent,
+    CalondetailComponent,
   ],
   imports: [
     BrowserModule,

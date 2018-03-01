@@ -13,8 +13,9 @@ export class HomeService {
   	return this.http.get('https://api.tirto.net/infografik/latest');
   }
   nyokot(){
-  	return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  	return this.http.get('https://ot.tirto.id/visualisasi-database-01/provinsi');
   }
+  
   public sayHello(){
   	console.log('hello');
   }

@@ -1,5 +1,5 @@
-<div *ngIf="keluar">
-  {{userbody}}<br>
+<!-- <div *ngIf="keluar">
+  {{mapkecil.id}}<br>
 
   
 </div>
@@ -13,5 +13,22 @@
 	{{title}} <br><br>
 
 
+</div> -->
+
+<div *ngFor= "let kota of DataKota" (click)="detailKota(kota.Kota)">
+	{{kota.No}}
+	{{kota.Provinsi}}
+	{{kota.Kota}}
+
 </div>
+
+<!-- <div *ngFor= "let calon of DataCalon">
+	{{calon[3]}}
+	{{calon[4]}}
+	{{calon[5]}}
+	{{calon[6]}}
+
+
+
+</div> -->
 

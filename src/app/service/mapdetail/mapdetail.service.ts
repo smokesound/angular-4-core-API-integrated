@@ -11,9 +11,16 @@ export class MapdetailService {
   }
 
    ambil(params){
-  	return this.http.get('https://jsonplaceholder.typicode.com/posts/' + params );
+  	return this.http.get('https://ot.tirto.id/visualisasi-database-01/provinsi' + params );
   }
 
+  getDetailProvinsi(params){
+    return this.http.get('https://ot.tirto.id/visualisasi-database-01/kota?q='+ params );
+  }
+
+  getDetailKota(params){
+    return this.http.get('https://ot.tirto.id/visualisasi-database-01/201?kota='+ params );
+  }
 
   public sayHello(){
   	console.log('hello');
