@@ -1,10 +1,43 @@
+<div>
+	
+	<a (click)=tahun2013()> 2013 </a> 
+	2015
+	2017
+	2018
 
-<div *ngFor="let provinsi of DataProvinsi" (click)="LihatKota(provinsi.Provinsi)" >
+</div>
+
+
+             <!--   <div class="col-sm-8 col-md-4">  
+                   <select id="Id" class="hideLabel form-control" name="Id" (change)="selectName(value);">  
+                           <option selected="" value=""></option>  
+                        <option [ngValue]="provinsi.Id" *ngFor="let provinsi of DataProvinsi">  
+                            {{provinsi.Provinsi}}  
+                     </option>  
+                </select>  
+               </div>   -->
+
+               <select #select [(ngModel)]="current" (change)="selectName(select.value)">
+            <option *ngFor="let item of DataProvinsi" [value]="item.id">{{item.title}}</option>
+        </select>
+
+     <!--  <select (change)="selectName(select.value)">
+    <option *ngFor="let provinsi of DataProvinsi" [ngValue]="provinsi.id">{{provinsi.title}}</option>
+</select> -->
+ <select (change)="selectName($event.target.value)">
+    <option *ngFor="let kota of nama">{{kota.name}}</option>
+</select>
+
+
+
+
+
+<!-- <div *ngFor="let provinsi of DataProvinsi" (click)="LihatKota(provinsi.Provinsi)" >
   {{ provinsi.No }}
   {{ provinsi.Provinsi }}
 
 
-</div>
+</div> -->
 
 
 <!-- 

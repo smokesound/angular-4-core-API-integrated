@@ -9,6 +9,7 @@ import { HomeComponent } from './page/home/home.component';
 import { MapdetailComponent } from './page/mapdetail/mapdetail.component';
 import { MapdetailService } from './service/mapdetail/mapdetail.service';
 import { CalondetailComponent } from './page/calondetail/calondetail.component';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

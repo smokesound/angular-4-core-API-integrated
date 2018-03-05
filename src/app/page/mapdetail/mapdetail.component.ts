@@ -31,15 +31,16 @@ DataCalon:any;
 
     console.log(this.id);
 
-  this.mapdetailService.getDetailProvinsi(this.id)
-    .subscribe(data => {
-      console.log(data);
-      // this.DataKota = data.data;
-      console.log(this.DataKota);
-    }, error => {
-      console.log(error);
+  // this.mapdetailService.getDetailProvinsi(this.id)
+  //   .subscribe(data => {
+  //     console.log(data);
+  //     this.dataLuar = data;
+  //     this.DataKota = this.dataLuar.data;
+  //     console.log(this.DataKota);
+  //   }, error => {
+  //     console.log(error);
 
-    });
+  //   });
 
     // this.mapdetailService.ambil(this.id)
     // .subscribe(data => {
@@ -75,17 +76,18 @@ bikinKeluar(){
     })
   }
   
-  detailKota(params){
-    console.log(params);
-     this.mapdetailService.getDetailKota(params)
-    .subscribe(data => {
-      console.log(data);
-      // this.DataCalon = data.data;
-      console.log(this.DataCalon);
-    }, error => {
-      console.log(error);
+  // detailKota(params){
+  //   console.log(params);
+  //    this.mapdetailService.getDetailKota(params)
+  //   .subscribe(data => {
+  //     console.log(data);
+  //     this.dataNama = data;
+  //     this.DataCalon = this.dataNama.data;
+  //     console.log(this.DataCalon);
+  //   }, error => {
+  //     console.log(error);
 
-    });
-  }
+  //   });
+  // }
 
 }

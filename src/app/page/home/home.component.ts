@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../service/home/home.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import 'rxjs/add/operator/map';
+import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 // import { Observable } from 'rxjs/Observable';
 // import { MapdetailComponent } from "../mapdetail/mapdetail";
@@ -15,8 +16,6 @@ import 'rxjs/add/operator/map';
 })
 export class HomeComponent implements OnInit {
 
-	berita:any;
-	singleberita: any;
 	data: any;
   userlist: any;
   pathId: any;
@@ -27,7 +26,11 @@ export class HomeComponent implements OnInit {
   id: any;
   DataProvinsi: any;
   dataRaw: any;
-
+  dataRaw2013: any;
+  data2013: any;
+  rawDataTable: any;
+  dataKota: any;
+  current: any;
 
   
 
@@ -41,13 +44,67 @@ export class HomeComponent implements OnInit {
         // console.log(data.data);
 
         this.dataRaw = data;
-        console.log(this.dataRaw.data);
-        this.DataProvinsi = this.dataRaw.data;
+        console.log(this.dataRaw);
+        this.DataProvinsi = this.dataRaw;
       }, error => {
         console.log(error);
       });
-    
-    // this.pathId = "M36.45,91.68l-0.17,0.1l-0.71,-1.09l-1.25,-1.34l-0.98,-0.46l-0.59,-0.1l-0.24,-0.15l0.11,-0.15l0.99,-0.2l2.06,0.13l0.69,1.08l0.34,0.98l-0.01,0.86L36.45,91.68zM8.9,30.57l2.59,1.42l0.08,0.66l0.28,0.46l1.01,1l1.79,1.4l0.85,0.35l3.94,0.98l4.04,0.27l1.91,-0.35l2.23,-0.88h0.36l0.9,0.48L30.4,36l1.12,0.12l1.41,0.53l0.38,0.33l0.32,0.86l0.62,0.21l0.98,-0.2l3.93,-1.52l0.47,0.02l0.88,0.89l1.09,1.51l2.15,2.26l1.56,1.32l1.21,0.28l0.89,1.77l0.15,1.52l0.41,0.97l0.44,0.59l-0.09,0.93l0.82,-0.1l0.97,0.36l0.64,0.31l2.06,1.58l0.14,1.33l-0.36,0.86l0,0l-0.4,0.14l-0.8,-0.15l-0.77,0.21l-0.06,0.32l-0.27,0.12l-0.56,0.12l-0.38,-0.09l-0.09,0.21l0.3,0.53l-0.03,0.38l-0.41,0.24l0.15,0.47l-0.47,0.68l0.03,0.97l-0.21,0.29l-0.24,1.33l-1.21,0.65l0.06,0.38l-0.15,0.27l-0.56,-0.38l-0.18,0.03l-0.09,0.32l0.41,0.74l-0.12,0.35l-1.48,1.18l-0.44,0.62l0.33,0.82l0.47,0.5v0.32l0.27,0.18l-0.03,0.74l0.74,0.35l0.21,0.88l0.56,0.41l-0.33,0.53l0.27,0.56l0.03,0.44l0.65,0.44l0.27,-0.12l0.38,0.71l-0.24,0.79l-2.37,0.65l0.09,0.18l0.59,0.12l0.5,0.5l0.06,0.74l0.62,0.65l-0.09,0.97l-0.62,-0.06l-0.18,0.12l0.21,0.26l-0.03,0.53l0.27,0.88v1.06l0.92,0.24l0.59,1.06l0.95,0.12l-0.03,0.26l0.24,0.29l-0.33,0.5l-0.06,0.38l0.15,0.65l0.5,0.5l0.03,0.26l-0.62,0.21l-0.24,1.41l0.18,1l0.41,0.56l-0.06,0.71l0.83,0.35l0.53,1.62l-0.61,2.79l0,0l-3.51,-1.98h-0.4l-0.93,0.46l-2.1,-0.53l-1.65,-2.3l-0.1,-4l-0.32,-2.17l-0.58,-1.78l-0.2,-0.21l-0.8,-0.01l-1.57,-0.62L38,76.36l-0.66,-0.63l-1.24,-1.73l-0.46,-1.96l-0.47,-0.77l-1.53,-0.52l-1.58,-2.52l-1.23,-2.32l-1.4,-0.78l-0.47,-0.52l-0.3,-1.13l-1.6,-1.12l-2.64,-0.15l-1.33,0.22l-0.68,-0.14l-0.52,-0.3l-1.68,-1.64l-1.86,-2.77l-1.7,-1.81l-0.76,-0.24l-1.31,-1.01l-0.98,-0.44l-1.17,-1.04l-1.96,-2.36l-2.84,-2.64l-2.3,-1.88l-1.87,-2.83l-2.41,-4.69l0.34,-0.67l-0.06,-0.3l-1.17,-1.87l0.4,-2.12L0,32.4l0.17,-1.57l0.86,0.01l2.17,-1.4l0.4,-0.07l2.87,0.44L8.9,30.57z";
+
+      this.current = 1;
+
+
+  	
+  }
+  //   makeAlert(params) {
+  //       var ros = this.router.navigate(['/mapdetail/?' + 'params']);
+  //       console.log(this.ros);
+  // }
+
+  cekBerita(param){
+  	alert(param);
+  	console.log(param);
+  }
+
+  LihatKota(params){
+    var ros = this.router.navigate(['mapdetail/',params]);
+    console.log(params);
+  }
+
+  tahun2013(param){
+    this.homeService.getdata2013()
+    .subscribe(data => {
+      this.dataRaw2013 = data;
+      this.data2013 = this.dataRaw2013.data;
+
+    }, error => {
+        console.log(error);
+      });
+
+
+  }
+
+  selectName(params){
+    console.log(this.current);
+    this.homeService.nyokotlagi(params)
+    .subscribe(data => {
+      // console.log(params);
+      // console.log(data);
+      this.nama = data;
+      console.log(this.nama);
+      // this.rawDataTable = data;
+      // this.dataKota = this.rawDataTable.data;
+      // this.dataTable = JSON.stringify(JSON.parse(this.rawDataTable.data));
+      // console.log(this.dataKota);
+
+    },
+    error => {
+      console.log(error);
+    });
+  }
+
+  
+
+      // this.pathId = "M36.45,91.68l-0.17,0.1l-0.71,-1.09l-1.25,-1.34l-0.98,-0.46l-0.59,-0.1l-0.24,-0.15l0.11,-0.15l0.99,-0.2l2.06,0.13l0.69,1.08l0.34,0.98l-0.01,0.86L36.45,91.68zM8.9,30.57l2.59,1.42l0.08,0.66l0.28,0.46l1.01,1l1.79,1.4l0.85,0.35l3.94,0.98l4.04,0.27l1.91,-0.35l2.23,-0.88h0.36l0.9,0.48L30.4,36l1.12,0.12l1.41,0.53l0.38,0.33l0.32,0.86l0.62,0.21l0.98,-0.2l3.93,-1.52l0.47,0.02l0.88,0.89l1.09,1.51l2.15,2.26l1.56,1.32l1.21,0.28l0.89,1.77l0.15,1.52l0.41,0.97l0.44,0.59l-0.09,0.93l0.82,-0.1l0.97,0.36l0.64,0.31l2.06,1.58l0.14,1.33l-0.36,0.86l0,0l-0.4,0.14l-0.8,-0.15l-0.77,0.21l-0.06,0.32l-0.27,0.12l-0.56,0.12l-0.38,-0.09l-0.09,0.21l0.3,0.53l-0.03,0.38l-0.41,0.24l0.15,0.47l-0.47,0.68l0.03,0.97l-0.21,0.29l-0.24,1.33l-1.21,0.65l0.06,0.38l-0.15,0.27l-0.56,-0.38l-0.18,0.03l-0.09,0.32l0.41,0.74l-0.12,0.35l-1.48,1.18l-0.44,0.62l0.33,0.82l0.47,0.5v0.32l0.27,0.18l-0.03,0.74l0.74,0.35l0.21,0.88l0.56,0.41l-0.33,0.53l0.27,0.56l0.03,0.44l0.65,0.44l0.27,-0.12l0.38,0.71l-0.24,0.79l-2.37,0.65l0.09,0.18l0.59,0.12l0.5,0.5l0.06,0.74l0.62,0.65l-0.09,0.97l-0.62,-0.06l-0.18,0.12l0.21,0.26l-0.03,0.53l0.27,0.88v1.06l0.92,0.24l0.59,1.06l0.95,0.12l-0.03,0.26l0.24,0.29l-0.33,0.5l-0.06,0.38l0.15,0.65l0.5,0.5l0.03,0.26l-0.62,0.21l-0.24,1.41l0.18,1l0.41,0.56l-0.06,0.71l0.83,0.35l0.53,1.62l-0.61,2.79l0,0l-3.51,-1.98h-0.4l-0.93,0.46l-2.1,-0.53l-1.65,-2.3l-0.1,-4l-0.32,-2.17l-0.58,-1.78l-0.2,-0.21l-0.8,-0.01l-1.57,-0.62L38,76.36l-0.66,-0.63l-1.24,-1.73l-0.46,-1.96l-0.47,-0.77l-1.53,-0.52l-1.58,-2.52l-1.23,-2.32l-1.4,-0.78l-0.47,-0.52l-0.3,-1.13l-1.6,-1.12l-2.64,-0.15l-1.33,0.22l-0.68,-0.14l-0.52,-0.3l-1.68,-1.64l-1.86,-2.77l-1.7,-1.81l-0.76,-0.24l-1.31,-1.01l-0.98,-0.44l-1.17,-1.04l-1.96,-2.36l-2.84,-2.64l-2.3,-1.88l-1.87,-2.83l-2.41,-4.69l0.34,-0.67l-0.06,-0.3l-1.17,-1.87l0.4,-2.12L0,32.4l0.17,-1.57l0.86,0.01l2.17,-1.4l0.4,-0.07l2.87,0.44L8.9,30.57z";
     // this.classId = "jakarta";
 
     //  this.map = [
@@ -77,24 +134,5 @@ export class HomeComponent implements OnInit {
     //     "classId" : "kalimantanTengah"
     //   },
     // ];
-
-  	
-  }
-  //   makeAlert(params) {
-  //       var ros = this.router.navigate(['/mapdetail/?' + 'params']);
-  //       console.log(this.ros);
-  // }
-
-  cekBerita(param){
-  	alert(param);
-  	console.log(param);
-  }
-
-  LihatKota(params){
-    var ros = this.router.navigate(['mapdetail/',params]);
-    console.log(params);
-  }
-
-  
 
 }
