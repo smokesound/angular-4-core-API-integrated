@@ -18,14 +18,14 @@
                </div>   -->
 
                <select #select [(ngModel)]="current" (change)="selectName(select.value)">
-            <option *ngFor="let item of DataProvinsi" [value]="item.id">{{item.title}}</option>
+            <option *ngFor="let provinsi of DataProvinsi" [value]="provinsi.Provinsi">{{provinsi.Provinsi}}</option>
         </select>
 
      <!--  <select (change)="selectName(select.value)">
     <option *ngFor="let provinsi of DataProvinsi" [ngValue]="provinsi.id">{{provinsi.title}}</option>
 </select> -->
  <select (change)="selectName($event.target.value)">
-    <option *ngFor="let kota of nama">{{kota.name}}</option>
+    <option *ngFor="let kota of dataKota">{{kota.Kota}}</option>
 </select>
 
 

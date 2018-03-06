@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
 
         this.dataRaw = data;
         console.log(this.dataRaw);
-        this.DataProvinsi = this.dataRaw;
+        this.DataProvinsi = this.dataRaw.data;
       }, error => {
         console.log(error);
       });
@@ -89,8 +89,9 @@ export class HomeComponent implements OnInit {
     .subscribe(data => {
       // console.log(params);
       // console.log(data);
-      this.nama = data;
-      console.log(this.nama);
+      this.rawDataTable = data;
+      console.log(this.dataKota);
+      this.dataKota = this.rawDataTable.data;
       // this.rawDataTable = data;
       // this.dataKota = this.rawDataTable.data;
       // this.dataTable = JSON.stringify(JSON.parse(this.rawDataTable.data));

@@ -13,10 +13,10 @@ export class HomeService {
   	return this.http.get('https://api.tirto.net/infografik/latest');
   }
   nyokot(){
-    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+    return this.http.get('https://ot.tirto.id/visualisasi-database-01/provinsi?q=jawa');
   }
   nyokotlagi(params){
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/'+ params +'/comments');
+    return this.http.get('https://ot.tirto.id/visualisasi-database-01/kota?q=' + params);
   }
   getdata2013(){
     return this.http.get('https://ot.tirto.id/visualisasi-database-01/2013');
