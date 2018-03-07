@@ -134,3 +134,4 @@ console.log(this.storage.get("binatang"));
     });
 
 }
+}
