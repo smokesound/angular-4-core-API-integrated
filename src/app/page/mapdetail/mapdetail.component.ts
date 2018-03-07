@@ -19,6 +19,8 @@ peta: boolean = false;
 title: any;
 DataKota: any;
 DataCalon:any;
+dataLuar : any;
+DataKabupaten : any;
 
   constructor(private route: ActivatedRoute, public mapdetailService: MapdetailService
     ) { }

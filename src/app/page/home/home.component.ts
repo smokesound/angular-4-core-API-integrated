@@ -35,6 +35,12 @@ export class HomeComponent implements OnInit {
   current: any;
   parapara: any;
   kabupaten : boolean;
+  dataRawPartai : any;
+  dataPartai : any;
+  data2018 : any;
+  dataTahun : any;
+  dataRaw2018 : any;
+  DataPartai : any;
 
   
 
