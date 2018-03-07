@@ -11,7 +11,7 @@ export class MapdetailService {
   }
 
    ambil(params){
-  	return this.http.get('https://ot.tirto.id/visualisasi-database-01/provinsi' + params );
+  	return this.http.get('https://ot.tirto.id/visualisasi-database-01/provinsi?q=' + params );
   }
 
   getDetailProvinsi(params){

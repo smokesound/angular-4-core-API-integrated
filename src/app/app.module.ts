@@ -10,6 +10,7 @@ import { MapdetailComponent } from './page/mapdetail/mapdetail.component';
 import { MapdetailService } from './service/mapdetail/mapdetail.service';
 import { CalondetailComponent } from './page/calondetail/calondetail.component';
 import { FormsModule } from '@angular/forms';
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 
 const appRoutes: Routes = [
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    StorageServiceModule,
     HttpModule,
     HttpClientModule,
     FormsModule,

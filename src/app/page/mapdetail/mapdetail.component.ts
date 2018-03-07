@@ -31,16 +31,16 @@ DataCalon:any;
 
     console.log(this.id);
 
-  // this.mapdetailService.getDetailProvinsi(this.id)
-  //   .subscribe(data => {
-  //     console.log(data);
-  //     this.dataLuar = data;
-  //     this.DataKota = this.dataLuar.data;
-  //     console.log(this.DataKota);
-  //   }, error => {
-  //     console.log(error);
+  this.mapdetailService.getDetailProvinsi(this.id)
+    .subscribe(data => {
+      console.log(data);
+      this.dataLuar = data;
+      this.DataKabupaten = this.dataLuar.data;
+      console.log(this.DataKota);
+    }, error => {
+      console.log(error);
 
-  //   });
+    });
 
     // this.mapdetailService.ambil(this.id)
     // .subscribe(data => {

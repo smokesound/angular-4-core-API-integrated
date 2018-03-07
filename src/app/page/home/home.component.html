@@ -1,9 +1,18 @@
 <div>
 	
-	<a (click)=tahun2013()> 2013 </a> 
-	2015
+	<a (click)=masukinLocal(2018)> 2013 </a> 
+	<a (clcik)=tahun2018()> 2018 </a>   
 	2017
 	2018
+
+<div>
+<svg height="500" width="1000">
+  
+  <path *ngFor="let mapkecil of DataProvinsi" [attr.d]="mapkecil.Koordinat" (click)="makeAlert(mapkecil.Provinsi)" [ngClass]="mapkecil.Provinsi" class="mapHover" stroke="white" />
+  
+</svg>
+
+</div>
 
 </div>
 
@@ -17,17 +26,26 @@
                 </select>  
                </div>   -->
 
-               <select #select [(ngModel)]="current" (change)="selectName(select.value)">
+               <select  #select [(ngModel)]="current" (change)="pilihKota(select.value)">
             <option *ngFor="let provinsi of DataProvinsi" [value]="provinsi.Provinsi">{{provinsi.Provinsi}}</option>
         </select>
 
      <!--  <select (change)="selectName(select.value)">
     <option *ngFor="let provinsi of DataProvinsi" [ngValue]="provinsi.id">{{provinsi.title}}</option>
 </select> -->
- <select (change)="selectName($event.target.value)">
-    <option *ngFor="let kota of dataKota">{{kota.Kota}}</option>
+ <select *ngIf="kabupaten" (change)="pilihPartai($event.target.value)">
+    <option *ngFor="let partai of DataPartai">{{partai.Partai}}</option>
 </select>
 
+<div *ngFor="let calon of data2018">	
+	{{calon.Provinsi}}
+	{{calon.Kota}}
+	{{calon.Pemilihan}}
+	{{calon.CalonKepala}}
+	{{calon.CalonWakil}}
+	
+
+</div>
 
 
 
