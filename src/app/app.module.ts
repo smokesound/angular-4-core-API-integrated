@@ -11,6 +11,7 @@ import { MapdetailService } from './service/mapdetail/mapdetail.service';
 import { CalondetailComponent } from './page/calondetail/calondetail.component';
 import { FormsModule } from '@angular/forms';
 import { StorageServiceModule} from 'angular-webstorage-service';
+import { SlickModule } from 'ngx-slick';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule,
     FormsModule,
+    SlickModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

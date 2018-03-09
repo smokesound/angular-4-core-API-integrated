@@ -41,7 +41,8 @@ export class HomeComponent implements OnInit {
   dataTahun : any;
   dataRaw2018 : any;
   DataPartai : any;
-
+  slides: any;
+  slideConfig: any;
   
 
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService, public homeService: HomeService, private router: Router){
@@ -80,8 +81,31 @@ console.log(this.storage.get("binatang"));
 
       this.current = 2;
 
+       this.slides = [
+    {img: "http://placehold.it/50x50/000000"},
+    {img: "http://placehold.it/50x50/111111"},
+    {img: "http://placehold.it/50x50/333333"},
+    {img: "http://placehold.it/50x50/666666"}
+  ];
+  this.slideConfig = {
+    "slidesToShow": 3,
+    "slidesToScroll": 1, 
+    "centerPadding": "10px",
+    "centerMode": true
+    };
+	
+  }
 
-  	
+    addSlide() {
+    this.slides.push({img: "http://placehold.it/350x150/777777"})
+  }
+
+  removeSlide() {
+    this.slides.length = this.slides.length - 1;
+  }
+
+  afterChange(e) {
+    console.log('afterChange');
   }
 
   masukinLocal(params){
